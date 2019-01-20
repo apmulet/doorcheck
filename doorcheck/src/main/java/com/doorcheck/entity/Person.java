@@ -3,16 +3,31 @@ package com.doorcheck.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
+
+import com.doorcheck.dao.PersonRepo;
+
 @Entity
 public class Person {
 	
 	@Id
-	private int id;
-	private String name;
+	private String dni;
+	@Nullable
 	private long lastEnterDate;
+	@Nullable
 	private long lastExitDate;
+	private String name;
+	 
+	//List<Estancia> estancias;
 	
+	public Person() {}
 	
+	public Person(String dni, String name) {
+		 this.dni=dni;
+		 this.name=name;
+	}
+
 	public long getLastEnterDate() {
 		return lastEnterDate;
 	}
@@ -20,7 +35,7 @@ public class Person {
 	public void setLastEnterDate(long lastEnterDate) {
 		this.lastEnterDate = lastEnterDate;
 	}
-
+	
 	public long getLastExitDate() {
 		return lastExitDate;
 	}
@@ -28,23 +43,19 @@ public class Person {
 	public void setLastExitDate(long lastExitDate) {
 		this.lastExitDate = lastExitDate;
 	}
-	
-	
-	
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", name=" + name + "]";
+
+	public String getDni() {
+		return dni;
 	}
-	
-	public int getId() {
-		return id;
+
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
