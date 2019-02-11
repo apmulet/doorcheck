@@ -1,11 +1,23 @@
 package com.doorcheck.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+import org.springframework.data.jpa.datatables.mapping.DataTablesOutput.View;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+import lombok.Data;
+
+@Data
 @Entity
 public class Estancia {
 
@@ -16,17 +28,28 @@ public class Estancia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
+	@JsonView(View.class)
 	private long id;
 	
-	private String dni;
+	@JsonView(View.class)
+	@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="P_DNI", nullable=false)
+	private Person person;
+	 
+	
+	/** tiempos de entrada y salida, pude haber usado LocalDateTime
+	 *   
+	 */
+	@JsonView(View.class)
 	private long enter;
+	@JsonView(View.class)
 	private long exit;
 	
 	public Estancia() {
 	}
 
-	public Estancia(String dni, long enter, long exit) {
-		this.dni = dni;
+	public Estancia(Person p, long enter, long exit) {
+		this.person = p;
 		this.enter = enter;
 		this.exit = exit;
 	}
@@ -57,12 +80,12 @@ public class Estancia {
 		this.exit = exit;
 	}
 
-	public String getDni() {
-		return dni;
+	public Person getPerson() {
+		return person;
 	}
 
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setPerson(String dni) {
+		this.person = person;
 	}
 
 }
