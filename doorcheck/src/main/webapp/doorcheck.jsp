@@ -90,7 +90,7 @@ body {
 <body class="text-center">
 
 	<form class="form-dni">
-		<h1 class="h1"><a href="home">SIGNE Building</a></h1>
+		<h1 class="h1"><a id="homelnk" href="home">SIGNE Building</a></h1>
 		<br />
 		<h3 class="h3 mb-3 font-weight-normal">Checking Door </h3>
 		<br /> <label for="inputEmail" class="sr-only">DNI:</label>
@@ -98,8 +98,8 @@ body {
 		<br /> 
 		<div id="resp"></div>
 		
-		<A class="btn btn-primary btn-block" href="#" onclick="enter();">Enter</A>
-		<A class="btn btn-primary btn-block" href="#" onclick="exit();">Exit</A>
+		<A id ="enterbt" class="btn btn-primary btn-block" href="#" onclick="enter();">Enter</A>
+		<A id ="exitbt" class="btn btn-primary btn-block" href="#" onclick="exit();">Exit</A>
 		<p class="mt-5 mb-3 text-muted">&copy; 2019 Confirma Sistemas</p>
 	</form>
 

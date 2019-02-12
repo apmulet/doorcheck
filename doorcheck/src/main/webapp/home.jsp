@@ -35,11 +35,11 @@ body {
 			<a href="home">SIGNE Building</a>
 		</h1>
 		<h2> Door Check Options</h2>
-		<A class="btn btn-primary btn-block" href="register">Register Person</A>
+		<A class="btn btn-primary btn-block" id="regbt" href="register">Register Person</A>
 		<br/>
-		<A class="btn btn-primary btn-block"href="doorcheck">Door Check</A>
+		<A class="btn btn-primary btn-block" id="doorchkbt" href="doorcheck">Door Check</A>
 		<br/>
-		<A class="btn btn-primary btn-block"href="list">List Filters</A>
+		<A class="btn btn-primary btn-block" id="listbt" href="list">List Filters</A>
 		<br/>
 		<p class="mt-5 mb-3 text-muted">&copy; 2019 Confirma Sistemas</p>
 	</div>

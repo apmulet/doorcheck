@@ -207,7 +207,7 @@ tr.estancias td {
 <body class="text-center">
 	<div style="width: 800px;">
 		<h1 class="h1">
-			<a href="home">SIGNE Building</a>
+			<a id="homelnk" href="home">SIGNE Building</a>
 		</h1>
 		<h2>Filtered Accesses List</h2>
 		<div>
@@ -220,8 +220,8 @@ tr.estancias td {
 				</select> <label>Name:</label> <input type="text" id="name" /> <label>Start
 					Date:</label> <input type="text" id="startDate" /> <label>End
 					Date:</label> <input type="text" id="endsDate" />
-				<button type="button" onclick="clearSearch();">Clear</button>
-				<button type="button" onclick="doSearch();">Search</button>
+				<button id = "clearbt" type="button" onclick="clearSearch();">Clear</button>
+				<button id = "searchbt" type="button" onclick="doSearch();">Search</button>
 			</div>
 		</div>
 
